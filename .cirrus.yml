@@ -45,6 +45,6 @@ task:
       - cd /tmp/los/vendor/xiaomi/juice
       - git add .
       - git commit -m "juice-vendor: Switch to QTI BT" -m "* add prebuilt com.qualcomm.qti.ant@1.0.so
-* clean up FM prebuilt lib"
+        * clean up FM prebuilt lib"
       - git push -f origin
     
