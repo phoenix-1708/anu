@@ -45,5 +45,5 @@ task:
       - cd /tmp/los/vendor/xiaomi/juice
       - git add .
       - git commit -m "juice-vendor: Update blobs from lemon_qssi-user-11-RKQ1.201004.002-22.1.19-release-keys"
-      - git push -u origin 11
+      - git push -f origin
     
