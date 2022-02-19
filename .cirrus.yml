@@ -44,8 +44,8 @@ task:
       - cd /tmp/los/vendor/xiaomi/juice
       - git init
       - git remote add origin https://gitlab.com/I-n-o-k/vendor_xiaomi_lime.git
+      - git branch -M 11
       - git add .
-      - git branch -m 11
       - git commit -s -m "juice-vendor: Initial OSS BringUp" -m "Import from lemon_qssi-user-11-RKQ1.201004.002-21.9.15-release-keys"
       - git push -f origin 11
     
