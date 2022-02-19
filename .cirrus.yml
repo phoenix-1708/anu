@@ -27,7 +27,7 @@ task:
       - rm -rf anu
       - git clone https://github.com/I-n-o-k/android_tools anu
       - sudo bash anu/setup.sh
-      - sudo bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data1/xiaomi.eu_multi_HMNote94G_HM9T_22.1.19_v13-11.zip
+      - sudo bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.28_v12-11.zip
 
     dummy_script:
 #      - sudo bash /tmp/anu/tools/dummy_dt.sh /tmp/anu/dumps/*
