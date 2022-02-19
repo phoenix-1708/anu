@@ -27,13 +27,14 @@ task:
       - rm -rf anu
       - git clone https://github.com/I-n-o-k/android_tools anu
       - sudo bash anu/setup.sh
-      - sudo bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data/xiaomi.eu_multi_HMNote94G_HM9T_21.9.28_v12-11.zip
+      - sudo bash anu/tools/rom_extract.sh https://eunha.ovin.my.id/0:/Data1/xiaomi.eu_multi_HMNote94G_HM9T_22.1.19_v13-11.zip
 
     dummy_script:
 #      - sudo bash /tmp/anu/tools/dummy_dt.sh /tmp/anu/dumps/*
       - git clone https://github.com/LineageOS/android_tools_extract-utils /tmp/los/tools/extract-utils
       - git clone https://github.com/I-n-o-k/proprietary-files -b 12 /tmp/los/device/xiaomi/juice
       - sudo bash /tmp/los/device/xiaomi/juice/extract-files.sh /tmp/anu/dumps/*
+      - git clone https://gitlab.com/I-n-o-k/vendor_xiaomi_lime -b 11 /tmp/los/vendor/xiaomi/juice
 #      - rm -rf /tmp/anu/dummy_dt/working
 #      - mv /tmp/anu/dummy_dt/*/*/proprietary-files.txt /tmp/los/vendor/xiaomi/juice
 
@@ -42,10 +43,7 @@ task:
 
     push_script:
       - cd /tmp/los/vendor/xiaomi/juice
-      - git init
-      - git remote add origin https://gitlab.com/I-n-o-k/vendor_xiaomi_lime.git
-      - git branch -M 11
       - git add .
-      - git commit -m "juice-vendor: Initial OSS BringUp" -m "Import from lemon_qssi-user-11-RKQ1.201004.002-21.9.15-release-keys"
+      - git commit -m "juice-vendor: Update blobs from lemon_qssi-user-11-RKQ1.201004.002-22.1.19-release-keys"
       - git push -u origin 11
     
