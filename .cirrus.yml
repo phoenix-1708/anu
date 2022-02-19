@@ -44,6 +44,6 @@ task:
     push_script:
       - cd /tmp/los/vendor/xiaomi/juice
       - git add .
-      - git commit -m "juice-vendor: Move audiohalext as prebuilt"
+      - git commit -m "juice-vendor: Remove QTI Perfd"
       - git push -f origin
     
