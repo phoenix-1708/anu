@@ -43,7 +43,7 @@ task:
       - mkdir -p ~/rom
       - cd ~/rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/NusantaraProject-ROM/android_manifest -b 12 -g default,-mips,-darwin,-notdefault
-      - git clone https://github.com/I-n-o-k/local_manifest --depth 1 -b 12 .repo/local_manifests
+#      - git clone https://github.com/I-n-o-k/local_manifest --depth 1 -b 12 .repo/local_manifests
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
       - echo "============================"
