@@ -33,7 +33,7 @@ task:
 #      - sudo bash /tmp/anu/tools/dummy_dt.sh /tmp/anu/dumps/*
       - git clone https://github.com/LineageOS/android_tools_extract-utils /tmp/los/tools/extract-utils
       - git clone https://github.com/I-n-o-k/proprietary-files -b 12 /tmp/los/device/xiaomi/juice
-      - git clone https://gitlab.com/I-n-o-k/vendor_xiaomi_lime -b 11 /tmp/los/vendor/xiaomi/juice
+      - git clone https://gitlab.com/I-n-o-k/vendor_xiaomi_juice -b 11 /tmp/los/vendor/xiaomi/juice
       - sudo bash /tmp/los/device/xiaomi/juice/extract-files.sh /tmp/anu/dumps/*
 #      - rm -rf /tmp/anu/dummy_dt/working
 #      - mv /tmp/anu/dummy_dt/*/*/proprietary-files.txt /tmp/los/vendor/xiaomi/juice
@@ -44,6 +44,6 @@ task:
     push_script:
       - cd /tmp/los/vendor/xiaomi/juice
       - git add .
-      - git commit -m "juice-vendor: Remove QTI Perfd"
+      - git commit -m "juice-vendor: clean up blobs"
       - git push -f origin
     
