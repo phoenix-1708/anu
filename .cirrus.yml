@@ -3,8 +3,8 @@ env:
     rcloneconfig: "ENCRYPTED[!27cdb38b9c9e4beaf0a9c9c2852cb8a41b7f0dd7bc44ed2c940b9f35d61592a1d4a845f3ca7e3ff445e8caef07ba14a6!]"
     tokentl: "ENCRYPTED[!4a0d8baed758cb2afd823cb0b80f7fa39e512752110df7188eb14a5390115eddded8133c873651742e28e221f25b0e93!]"
     idtl: "ENCRYPTED[!c75265493c359f33c43c1e996ad66d70efbd0a28670b8ffbf9cba43036dacde06c6ae879a2b0177d9f6164eda8fec5d9!]"
-    lunch: lunch nad_juice-userdebug
-    make: make nad
+    lunch: lunch lineage_sweet-userdebug
+    make: mka bacon
 
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
@@ -50,6 +50,7 @@ task:
       - rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
       - git clone https://gitlab.com/ImSurajxD/clang-r450784d -b master --depth=1 prebuilts/clang/host/linux-x86/clang-r450784d
       - git clone https://gitlab.com/nerdprojectorg/SDClang -b 16 --depth=1 prebuilts/clang/host/linux-x86/clang-sdclang
+      - cp kernel/xiaomi/sweet/arch/arm64/configs/sweet_defconfig kernel/xiaomi/sweet/arch/arm64/configs/sweet_user_defconfig
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
 
       - echo "============================"
