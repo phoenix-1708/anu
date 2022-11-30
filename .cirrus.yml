@@ -23,6 +23,8 @@ task:
        - git config --global user.email "harikumar1708@gmail.com"
        #- echo "$credentials" > ~/.git-credentials
        #- git config --global credential.helper store --file=~/.git-credentials
+       - apt-get install -y wget
+       - apt-get install -y curl
        - mkdir -p /tmp/ccache
        #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
        - cd /tmp
