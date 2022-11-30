@@ -27,7 +27,8 @@ task:
        #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
        - cd /tmp
        - mkdir rom
-       - curl https://oshi.at/YtQE -O ccache.tar.gz
+       #- curl https://oshi.at/YtQE -O ccache.tar.gz
+       - wget https://oshi.at/YtQE -O ccache.tar.gz --show-progress
        - time tar xf ccache.tar.gz
        - cd /tmp
   
@@ -43,7 +44,7 @@ task:
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Source"
       - cd /tmp/rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
       # DT/VT/KT/TC
       - git clone https://github.com/phoenix-1708/device_sweet -b main --depth=1 device/xiaomi/sweet
       - git clone https://github.com/phoenix-1708/vendor_sweet -b main --depth=1 vendor/xiaomi/sweet
