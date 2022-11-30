@@ -24,8 +24,10 @@ task:
        #- echo "$credentials" > ~/.git-credentials
        #- git config --global credential.helper store --file=~/.git-credentials
        - mkdir -p /tmp/ccache
-       - rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
+       #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
        - cd /tmp
+       - curl -O https://oshi.at/YtQE/ccache.tar.gz
+       - mkdir rom
        - time tar xf ccache.tar.gz
        - cd /tmp
   
@@ -73,14 +75,16 @@ task:
       - echo "Uploading the Build...."
       - echo "============================"
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Uploading Build $(cd /tmp/rom/out/target/product/sweet/ && ls *.zip)"
-      - rclone copy /tmp/rom/out/target/product/sweet/*.zip remote:sweet -P
+      #- rclone copy /tmp/rom/out/target/product/sweet/*.zip remote:sweet -P
+      - curl -T /tmp/rom/out/target/product/sweet/*.zip https://oshi.at
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd /tmp/rom/out/target/product/sweet/ && ls *.zip) Uploaded Successfully!"
       #- curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Download link http://anu.inok189.workers.dev/juice/$(cd /tmp/rom/out/target/product/juice/ && ls Nusantara*.zip)"
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Compres ccache"
       - ./ziping.sh
       - cd /tmp
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Uploading ccache...."
-      - rclone copy ccache.tar.gz remote:ccache/ci2 -P
+      #- rclone copy ccache.tar.gz remote:ccache/ci2 -P
+      - curl -T ccache.tar.gz https://oshi.at
       - echo " "
       - echo "============================"
       - echo "Build Uploaded Successfully!"
