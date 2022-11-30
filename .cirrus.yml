@@ -26,8 +26,8 @@ task:
        - mkdir -p /tmp/ccache
        #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
        - cd /tmp
-       - curl -O https://oshi.at/YtQE/ccache.tar.gz
        - mkdir rom
+       - curl https://oshi.at/YtQE -O ccache.tar.gz
        - time tar xf ccache.tar.gz
        - cd /tmp
   
