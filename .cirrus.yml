@@ -25,10 +25,10 @@ task:
        #- git config --global credential.helper store --file=~/.git-credentials
        - sudo apt-get install -y wget
        - sudo apt-get install -y curl
-       - mkdir -p /tmp/ccache
+       - mkdir -p /tmp/rom
        #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
        - cd /tmp
-       - mkdir rom
+       - mkdir ccache
        #- curl https://oshi.at/YtQE -O ccache.tar.gz
        - wget https://oshi.at/YtQE -O ccache.tar.gz --show-progress
        - time tar xf ccache.tar.gz
