@@ -48,14 +48,14 @@ task:
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Source"
       - cd /tmp/rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/RiceDroid/android -b thirteen -g default,-device,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j6 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
       # DT/VT/KT/TC
       - git clone https://github.com/phoenix-1708/device_sweet -b main --depth=1 device/xiaomi/sweet
       - git clone https://github.com/phoenix-1708/vendor_sweet -b main --depth=1 vendor/xiaomi/sweet
       - git clone https://github.com/phoenix-1708/kernel_xiaomi_sm6150 -b t13 --depth=1 kernel/xiaomi/sweet
       # HALS
-      - rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
-      - git clone https://gitlab.com/ImSurajxD/clang-r450784d -b master --depth=1 prebuilts/clang/host/linux-x86/clang-r450784d
+      #- rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
+      #- git clone https://gitlab.com/ImSurajxD/clang-r450784d -b master --depth=1 prebuilts/clang/host/linux-x86/clang-r450784d
       - git clone https://gitlab.com/nerdprojectorg/SDClang -b 16 --depth=1 prebuilts/clang/host/linux-x86/clang-sdclang
       - cp kernel/xiaomi/sweet/arch/arm64/configs/sweet_defconfig kernel/xiaomi/sweet/arch/arm64/configs/sweet_user_defconfig
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
