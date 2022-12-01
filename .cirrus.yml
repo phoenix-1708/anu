@@ -21,6 +21,7 @@ task:
        - DEBIAN_FRONTEND=noninteractive
        - git config --global user.name "phoenix-1708"
        - git config --global user.email "harikumar1708@gmail.com"
+       - sudo apt-get install -y ccache
        #- echo "$credentials" > ~/.git-credentials
        #- git config --global credential.helper store --file=~/.git-credentials
        #- sudo apt-get install -y wget
@@ -46,8 +47,8 @@ task:
       - echo "============================"
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Source"
       - cd /tmp/rom
-      - repo init -q --no-repo-verify --depth=1 -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+      - repo init -q --no-repo-verify --depth=1 -u https://github.com/RiceDroid/android -b thirteen -g default,-device,-mips,-darwin,-notdefault
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
       - git clone https://github.com/phoenix-1708/device_sweet -b main --depth=1 device/xiaomi/sweet
       - git clone https://github.com/phoenix-1708/vendor_sweet -b main --depth=1 vendor/xiaomi/sweet
