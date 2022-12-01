@@ -25,7 +25,7 @@ task:
        #- echo "$credentials" > ~/.git-credentials
        #- git config --global credential.helper store --file=~/.git-credentials
        #- sudo apt-get install -y wget
-       - sudo apt-get install -y pigz
+       #- sudo apt-get install -y pigz
        #- cd /tmp
        - mkdir -p /tmp/rom
        #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
