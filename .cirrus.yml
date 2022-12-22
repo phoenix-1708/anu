@@ -21,6 +21,7 @@ task:
        - DEBIAN_FRONTEND=noninteractive
        - git config --global user.name "phoenix-1708"
        - git config --global user.email "harikumar1708@gmail.com"
+       - git config --global color.ui true
        #- sudo apt-get install -y ccache
        #- echo "$credentials" > ~/.git-credentials
        #- git config --global credential.helper store --file=~/.git-credentials
@@ -33,7 +34,7 @@ task:
        #- mkdir ccache
        #- curl https://oshi.at/YtQE -O ccache.tar.gz
        - wget https://oshi.at/YtQE -O ccache.tar.gz --show-progress
-       - time tar xf ccache.tar.gz
+       - time tar xvf ccache.tar.gz
        #- cd /tmp
   
   Storage-Checker_background_script:
