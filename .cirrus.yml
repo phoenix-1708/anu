@@ -33,7 +33,7 @@ task:
        - cd /tmp
        #- mkdir ccache
        #- curl https://oshi.at/YtQE -O ccache.tar.gz
-       - wget https://oshi.at/YtQE -O ccache.tar.gz --show-progress
+       - wget https://oshi.at/YtQE -O ccache.tar.gz #--show-progress
        - time tar xvf ccache.tar.gz
        #- cd /tmp
   
