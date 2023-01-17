@@ -52,7 +52,7 @@ task:
       #- repo init -q --no-repo-verify --depth=1 -u https://github.com/ricedroidOSS/android -b thirteen -g default,-device,-mips,-darwin,-notdefault
       - repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
       #- repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j6 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
-      - repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync
+      - repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
       - git clone https://github.com/phoenix-1708/device_sweet -b main --depth=1 device/xiaomi/sweet
       - git clone https://github.com/phoenix-1708/vendor_sweet -b main --depth=1 vendor/xiaomi/sweet
