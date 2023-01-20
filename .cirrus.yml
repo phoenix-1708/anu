@@ -60,8 +60,8 @@ task:
       # HALS
       - rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
       - git clone https://gitlab.com/ImSurajxD/clang-r450784d -b master --depth=1 prebuilts/clang/host/linux-x86/clang-r450784d
-      #- git clone https://gitlab.com/nerdprojectorg/SDClang -b 16 --depth=1 prebuilts/clang/host/linux-x86/clang-sdclang
-      - git clone https://gitlab.com/varunhardgamer/trb_clang -b 16 prebuilts/clang/host/linux-x86/clang-trb
+      - git clone https://gitlab.com/nerdprojectorg/SDClang -b 16 --depth=1 prebuilts/clang/host/linux-x86/clang-sdclang
+      #- git clone https://gitlab.com/varunhardgamer/trb_clang -b 16 prebuilts/clang/host/linux-x86/clang-trb
       - cp kernel/xiaomi/sweet/arch/arm64/configs/sweet_defconfig kernel/xiaomi/sweet/arch/arm64/configs/sweet_user_defconfig
       #- rm -rf device/generic/opengl-transport
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
