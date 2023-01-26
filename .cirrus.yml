@@ -48,16 +48,16 @@ task:
       - echo "============================"
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Source"
       - cd /tmp/rom
-      #- repo init -q --no-repo-verify --depth=1 -u https://github.com/RiceDroid/android -b thirteen -g default,-device,-mips,-darwin,-notdefault
       #- repo init -q --no-repo-verify --depth=1 -u https://github.com/ricedroidOSS/android -b thirteen -g default,-device,-mips,-darwin,-notdefault
       - repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
-      #- repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
       #- repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j6 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
       - repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync
       #- repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
-      - git clone https://github.com/phoenix-1708/device_sweet -b main --depth=1 device/xiaomi/sweet
-      - git clone https://github.com/phoenix-1708/vendor_sweet -b main --depth=1 vendor/xiaomi/sweet
+      #- git clone https://github.com/phoenix-1708/device_sweet -b main --depth=1 device/xiaomi/sweet
+      #- git clone https://github.com/phoenix-1708/vendor_sweet -b main --depth=1 vendor/xiaomi/sweet
+      - git clone https://github.com/phoenix-1708/android_device_xiaomi_sweet -b rice --depth=1 device/xiaomi/sweet
+      - git clone https://github.com/phoenix-1708/android_vendor_xiaomi_sweet -b arrow-13.0 --depth=1 vendor/xiaomi/sweet
       - git clone https://github.com/phoenix-1708/kernel_xiaomi_sm6150 -b t13 --depth=1 kernel/xiaomi/sweet
       # HALS
       - rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
